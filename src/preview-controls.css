@@ -1,0 +1,92 @@
+/* لوحة التحكم: عمود المعاينة يمينًا وعمود الأدوات يسارًا */
+.workspace {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.workspace > * {
+  min-width: 0;
+}
+
+.workspace > .preview {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  position: sticky;
+  top: 18px;
+  height: min(760px, calc(100vh - 36px));
+  max-height: calc(100vh - 36px);
+  min-width: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.workspace > .controls,
+.workspace > .links,
+.workspace > .company-settings {
+  grid-column: 2;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.workspace > .controls { grid-row: 1; }
+.workspace > .links { grid-row: 2; }
+.workspace > .company-settings { grid-row: 3; }
+
+.preview-window {
+  width: min(100%, 430px);
+  height: calc(100% - 86px);
+  min-height: 0;
+  padding: 16px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-inline: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.preview-window .client {
+  flex: 0 0 auto;
+  width: 393px;
+  min-height: 0;
+  height: auto;
+  max-width: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.controls,
+.preview,
+.links,
+.company-settings {
+  overflow: hidden;
+}
+
+@media (max-width: 850px) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .workspace > .preview,
+  .workspace > .controls,
+  .workspace > .links,
+  .workspace > .company-settings {
+    grid-column: 1;
+    grid-row: auto;
+    position: relative;
+    top: auto;
+  }
+
+  .workspace > .preview { order: -1; }
+
+  .preview-window .client {
+    width: min(100%, 420px);
+    height: auto;
+    transform: none;
+  }
+}

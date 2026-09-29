@@ -1,0 +1,23 @@
+{
+  "name": "JACKX",
+  "short_name": "JACKX",
+  "description": "JACKX Cafe",
+  "start_url": "/?view=client",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0c1112",
+  "icons": [
+    {
+      "src": "/jackx_white_circle_icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/jackx_white_circle_icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
