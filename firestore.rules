@@ -4,7 +4,10 @@ service cloud.firestore {
     function signedIn() { return request.auth != null; }
     // Only the configured owner UID can change dashboard data.
     function isAdmin() {
-      return signedIn() && (request.auth.token.admin == true || request.auth.uid == 'deQKHlDl3dblnH98a9dbhSX4WbE3');
+      return signedIn() && (
+        request.auth.token.admin == true ||
+        request.auth.token.email == 'mohamedmosad1412@icloud.com'
+      );
     }
     function isStaff() { return signedIn() && (request.auth.token.admin == true || request.auth.token.role == 'cashier'); }
 

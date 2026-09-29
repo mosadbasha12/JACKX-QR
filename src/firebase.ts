@@ -2,7 +2,15 @@ import { getApp, getApps, initializeApp } from 'firebase/app';
 import { addDoc, collection, doc, getDoc, getFirestore, limit, onSnapshot, orderBy, query, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged, signInAnonymously, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
-const config = { apiKey:'AIzaSyBWhYhDuV8CAVYz33f0udYppgypp2phUew', authDomain:'jackx-1a9d9.firebaseapp.com', projectId:'jackx-1a9d9', storageBucket:'jackx-1a9d9.firebasestorage.app', messagingSenderId:'332749297524', appId:'1:332749297524:web:836f9623bf408dd1463e21' };
+const config = {
+  apiKey: 'AIzaSyB6_wJc0SmMQhOyr5wGYMOuuUM58tbQL6s',
+  authDomain: 'jackx-qr.firebaseapp.com',
+  projectId: 'jackx-qr',
+  storageBucket: 'jackx-qr.firebasestorage.app',
+  messagingSenderId: '648953895198',
+  appId: '1:648953895198:web:1ac1a639c24b77f4cc110f',
+  measurementId: 'G-K02HP13G9V',
+};
 const app = getApps().length ? getApp() : initializeApp(config);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
